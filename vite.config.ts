@@ -21,10 +21,10 @@ export default defineConfig({
         'assets/wallpapers/37-[12].jpg',
       ],
       manifest: {
-        name: 'Mac OS Monterey Svelte Web',
-        short_name: 'macOS Svelte',
+        name: 'macOS on the web 3',
+        short_name: 'macOS on the web 3',
         theme_color: '#ffffff',
-        description: 'Mac OS Monterey Web written in Svelte',
+        description: 'macOS Monterey on the web written in Svelte',
         icons: [
           {
             src: 'assets/app-icons/finder/128.png',
