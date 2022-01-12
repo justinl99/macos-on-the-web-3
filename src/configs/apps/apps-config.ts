@@ -43,6 +43,7 @@ const systemPreferences = createAppConfig({
 const viewSource = createAppConfig({
   title: `View Source`,
   resizable: true,
+    dockBreaksBefore: true,
 
   shouldOpenWindow: false,
   externalAction: () => window.open('https://github.com/hockerdiscord/macos-on-the-web-3', '_blank'),
@@ -61,6 +62,7 @@ const viewSource = createAppConfig({
 const vercel = createAppConfig({
   title: `Vercel`,
   resizable: true,
+    dockBreaksBefore: true,
 
   shouldOpenWindow: false,
   externalAction: () =>
@@ -72,6 +74,7 @@ const vercel = createAppConfig({
 const appstore = createAppConfig({
   title: 'App Store',
   resizable: true,
+    dockBreaksBefore: true,
   
   shouldOpenWindow: false,
   externalAction: () =>
