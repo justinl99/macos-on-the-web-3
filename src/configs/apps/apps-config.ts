@@ -23,14 +23,6 @@ const calendar = createAppConfig({
   resizable: true,
 });
 
-const vscode = createAppConfig({
-  title: 'VSCode',
-  resizable: true,
-
-  height: 600,
-  width: 800,
-});
-
 const finder = createAppConfig({
   title: 'Finder',
   resizable: true,
@@ -46,16 +38,6 @@ const safari = createAppConfig({
 const systemPreferences = createAppConfig({
   title: 'System Preferences',
   resizable: true,
-});
-
-const purusTwitter = createAppConfig({
-  title: `About the Developer`,
-  resizable: true,
-
-  dockBreaksBefore: true,
-
-  height: 600,
-  width: 800,
 });
 
 const viewSource = createAppConfig({
@@ -96,14 +78,12 @@ export const appsConfig = {
   wallpapers,
   calculator,
   calendar,
-  vscode,
   finder,
   appstore,
   safari,
 
   'system-preferences': systemPreferences,
 
-  'purus-twitter': purusTwitter,
   'view-source': viewSource,
 
   vercel,
