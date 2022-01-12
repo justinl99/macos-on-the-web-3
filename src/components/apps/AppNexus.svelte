@@ -9,10 +9,6 @@
   {#await import('./Calendar/Calendar.svelte') then { default: Calendar }}
     <Calendar />
   {/await}
-{:else if appID === 'vscode'}
-  {#await import('./VSCode/VSCode.svelte') then { default: VSCode }}
-    <VSCode {isBeingDragged} />
-  {/await}
 {:else if appID === 'calculator'}
   {#await import('./Calculator/Calculator.svelte') then { default: Calculator }}
     <Calculator />
@@ -20,10 +16,6 @@
 {:else if appID === 'wallpapers'}
   {#await import('./WallpaperApp/WallpaperSelectorApp.svelte') then { default: WallpaperSelector }}
     <WallpaperSelector />
-  {/await}
-{:else if appID === 'purus-twitter'}
-  {#await import('./PurusProfile/PurusProfile.svelte') then { default: PurusProfile }}
-    <PurusProfile />
   {/await}
 {:else}
   {#await import('./Placeholder/Placeholder.svelte') then { default: Placeholder }}
