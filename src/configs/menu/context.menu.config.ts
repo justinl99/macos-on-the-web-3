@@ -7,6 +7,10 @@ export const contextMenuConfig = {
     'get-info': {
       title: 'Get Info',
       breakAfter: false,
+      
+        shouldOpenWindow: false,
+  externalAction: () =>
+    window.open('https://github.com/hockerdiscord/macos-on-the-web-3', '_blank'),
     },
     'change-desktop-bg': {
       title: 'Change Desktop Background',
