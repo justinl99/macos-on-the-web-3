@@ -72,6 +72,10 @@ const vercel = createAppConfig({
 const appstore = createAppConfig({
   title: 'App Store',
   resizable: true,
+  
+  shouldOpenWindow: false,
+  externalAction: () =>
+  window.open('https://www.apple.com/app-store/', '_blank'),
 });
 
 export const appsConfig = {
