@@ -45,7 +45,7 @@ const viewSource = createAppConfig({
   resizable: true,
 
   shouldOpenWindow: false,
-  externalAction: () => window.open('https://github.com/puruvj/macos-web', '_blank'),
+  externalAction: () => window.open('https://github.com/hockerdiscord/macos-on-the-web-3', '_blank'),
 });
 
 // const devUtils = createAppConfig({
