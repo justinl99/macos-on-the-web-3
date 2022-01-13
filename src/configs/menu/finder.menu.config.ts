@@ -7,6 +7,8 @@ export const finderMenuConfig = createMenuConfig({
       'about-finder': {
         title: 'About Finder',
         breakAfter: true,
+        externalAction: () =>
+        window.open('https://github.com/hockerdiscord/macos-on-the-web-3', '_blank'),
       },
       preferences: {
         title: 'Preferences',
