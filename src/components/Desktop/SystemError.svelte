@@ -2,7 +2,7 @@
   import { useRegisterSW } from 'virtual:pwa-register/svelte';
   import { systemNeedsUpdate } from '🍎/stores/system.store';
   import SystemDialog from '../SystemUI/SystemDialog.svelte';
-  let systemUpdateDialog: SystemDialog;
+  let systemErrorDialog: SystemDialog;
   // replaced dynamically
   const buildDate = '__DATE__';
   // Will store the update event, so we can use this value on AppStore to show the badge.
@@ -10,10 +10,10 @@
   // We don't need to store it on localStorage since the new sw is on skip waiting state, and so
   // a refresh or reopening the browser will prompt again the dialog to restart.
   // Once updateServiceWorker is called, there is a full reload, so the app will be loaded again.
-  let needsUpdate: boolean = false;
+  let needsError: boolean = false;
   const { needRefresh, updateServiceWorker } = useRegisterSW({
     onNeedRefresh() {
-      needsUpdate = true;
+      needsError = true;
     },
     onRegistered(swr) {
       console.log(`SW registered: ${swr}`);
@@ -22,22 +22,22 @@
       console.log('SW registration error', error);
     },
   });
-  $: $needRefresh && systemUpdateDialog?.open();
-  $: $systemNeedsUpdate = $needRefresh;
+  $: $needRefresh && systemErrorDialog?.open();
+  $: $systemNeedsError = $needRefresh;
   function close() {
-    systemUpdateDialog.close();
+    systemErrorDialog.close();
     needRefresh.set(false);
   }
-  async function handleUpdateApp() {
+  async function handleErrorApp() {
     if ($needRefresh) {
-      needsUpdate = false;
+      needsError = false;
       updateServiceWorker();
     }
   }
 </script>
 
-<SystemDialog bind:this={systemUpdateDialog}>
-  <section class="system-update-section">
+<SystemDialog bind:this={systemErrorDialog}>
+  <section class="system-error-section">
     <img
       width="128"
       height="128"
@@ -51,7 +51,7 @@
 
     <div class="buttons">
       <button on:click={close}>No</button>
-      <button class="confirm" on:click={handleUpdateApp}> Yes </button>
+      <button class="confirm" on:click={handleErrorApp}> Yes </button>
     </div>
   </section>
 </SystemDialog>
@@ -64,7 +64,7 @@
     height: 0;
     width: 0;
   }
-  .system-update-section {
+  .system-error-section {
     display: flex;
     flex-direction: column;
     align-items: center;
