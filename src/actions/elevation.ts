@@ -6,7 +6,7 @@ const zIndexConfig = {
   dock: 80,
   'dock-tooltip': 70,
   'system-updates-available': 60,
-  'system-error': 70,
+  'system-error': 60,
   'system-dialog': 90,
   'menubar-menu-parent': 160,
 };
