@@ -55,7 +55,7 @@ export const wallpapersConfig = createWallpapersConfig({
   },
 
   'big-sur': {
-    name: 'Monterey',
+    name: 'Big Sur',
     type: 'dynamic',
     thumbnail: '12-4',
     timestamps: {
