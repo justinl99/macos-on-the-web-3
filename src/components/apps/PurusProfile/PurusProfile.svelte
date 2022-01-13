@@ -1,3 +1,3 @@
 <script lang="ts">
-  export {}
+  export let isBeingDragged: boolean;
 </script>
